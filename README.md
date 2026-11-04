@@ -17,6 +17,20 @@ Applying **Generative Adversarial Networks (GANs)** to seismic processing allows
 
 ---
 
+## 🏗️ Architecture & Data Flow (GAN Pipeline)
+
+The workflow follows an adversarial learning paradigm tailored for 1D seismic time series data:
+
+```mermaid
+graph TD
+    A[Noisy Seismic Trace S_noisy] -->|Input| B(Generator 1D CNN)
+    B -->|Denoised Trace G S_noisy| C[Discriminator 1D CNN]
+    D[Clean Reference S_clean] --> C
+    C -->|Adversarial Feedback| B
+    B --> E[Hybrid Loss: L_GAN + L_1]
+
+```
+
 ## 🧠 Theoretical Background
 
 This project integrates classical wave propagation models with generative deep learning primitives:
