@@ -83,3 +83,27 @@ Synthetic seismic trace generated with $f_M = 25\text{ Hz}$ overlaid with synthe
 ├── generate_synthetic_data.py # Script for synthetic Ricker wavelet generation
 ├── train.py                   # GAN training pipeline with combined losses
 └── README.md                  # Detailed project documentation
+
+---
+
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Deep Learning:** PyTorch (1D Convolutional Neural Networks)
+* **Geophysics & Math:** NumPy, SciPy, Matplotlib
+* **Version Control & Execution:** Git, GitHub, Google Colab
+
+---
+
+## 📚 References & Scientific Literature
+
+1. **Ricker, N.** (1953). *The form and laws of propagation of seismic wavelets*. Geophysics, 18(1), 10-40.
+2. **Goodfellow, I., et al.** (2014). *Generative adversarial nets*. Advances in Neural Information Processing Systems (NeurIPS), 27.
+3. **Isola, P., et al.** (2017). *Image-to-image translation with conditional adversarial networks* (Pix2Pix framework for paired L1 loss). IEEE CVPR.
+4. **Siahkoohi, A., et al.** (2019). *Seismic data denoising using generative adversarial networks*. SEG Technical Program Expanded Abstracts.
+
+---
+
+## 👩‍💻 Author
+**Yana Pinheiro**
+* M.Sc. Candidate in Geophysics at CPGF-UFPA (CNPq scholar).
+* Focus: Computational Geophysics, Machine Learning & Seismic Signal Processing.
