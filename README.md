@@ -1,4 +1,3 @@
-
 # Seismic GAN Noise Reduction 🧊🤖
 
 A high-performance computational framework for seismic signal noise attenuation using Generative Adversarial Networks (GANs) built in PyTorch. Developed as part of computational geophysics research.
@@ -9,7 +8,7 @@ A high-performance computational framework for seismic signal noise attenuation 
 
 In seismic exploration and reflection seismology, field data recordings are heavily contaminated by various types of noise (e.g., ambient ground roll, swell noise, random background interference). High noise levels degrade the **Signal-to-Noise Ratio (SNR)**, obscuring subtle reflections, fault boundaries, and thin-bed stratigraphy.
 
-Traditional filtering methodologies (such as bandpass filters, $f-k$ filtering, or wavelet transforms) often suffer from trade-offs between noise suppression and signal distortion—frequently blurring sharp seismic arrivals or phase signatures. 
+Traditional filtering methodologies (such as bandpass filters, f-k filtering, or wavelet transforms) often suffer from trade-offs between noise suppression and signal distortion—frequently blurring sharp seismic arrivals or phase signatures. 
 
 Applying **Generative Adversarial Networks (GANs)** to seismic processing allows for:
 * **Feature-preserving attenuation:** Removing non-coherent noise while preserving primary reflection amplitudes and phase.
@@ -25,23 +24,23 @@ This project integrates classical wave propagation models with generative deep l
 ### 1. Synthetic Seismic Modeling (Ricker Wavelet)
 The acoustic wave propagation source impulse is modeled using a zero-phase **Ricker Wavelet**, defined as the second derivative of a Gaussian function:
 
-$$A(t) = \left(1 - 2\pi^2 f_M^2 t^2\right) e^{-\pi^2 f_M^2 t^2}$$
+$$A(t) = (1 - 2\pi^2 f_M^2 t^2) e^{-\pi^2 f_M^2 t^2}$$
 
-Where $f_M$ represents the dominant frequency and $t$ is the time vector. Controlled additive Gaussian noise $\mathcal{N}(0, \sigma^2)$ is added to simulate degraded acquisition traces:
+Where $f_M$ represents the dominant frequency and $t$ is the time vector. Controlled additive Gaussian noise $N(0, \sigma^2)$ is added to simulate degraded acquisition traces:
 
-$$S_{\text{noisy}}(t) = A(t) + \eta(t)$$
+$$S_{noisy}(t) = A(t) + \eta(t)$$
 
 ### 2. Generative Adversarial Architecture (1D GAN)
 The denoising architecture consists of two competing networks trained in an adversarial framework:
-* **Generator ($G$):** A 1D Convolutional Autoencoder ($G: \mathbb{R}^N \to \mathbb{R}^N$) designed to extract multi-scale spatial-temporal features and reconstruct a clean version of the seismic trace.
-* **Discriminator ($D$):** A 1D Convolutional Classifier ($D: \mathbb{R}^N \to [0, 1]$) acting as a critic to differentiate between clean ground-truth waveforms and denoised outputs from $G$.
+* **Generator (G):** A 1D Convolutional Autoencoder designed to extract multi-scale spatial-temporal features and reconstruct a clean version of the seismic trace.
+* **Discriminator (D):** A 1D Convolutional Classifier acting as a critic to differentiate between clean ground-truth waveforms and denoised outputs from G.
 
 ### 3. Hybrid Optimization Objective
-To prevent structural blurring and phase shifts common in standard GAN training, a hybrid loss function combining Adversarial Loss ($\mathcal{L}_{\text{GAN}}$) and Pixel-wise $L_1$ Reconstruction Loss ($\mathcal{L}_{L1}$) is minimized:
+To prevent structural blurring and phase shifts common in standard GAN training, a hybrid loss function combining Adversarial Loss ($L_{GAN}$) and Pixel-wise $L_1$ Reconstruction Loss ($L_{L1}$) is minimized:
 
-$$\mathcal{L}_{G} = \mathcal{L}_{\text{GAN}}(G, D) + \lambda \cdot \mathcal{L}_{L1}(G)$$
+$$L_{G} = L_{GAN}(G, D) + \lambda \cdot L_{L1}(G)$$
 
-Where $\mathcal{L}_{L1} = \Vert{} S_{\text{clean}} - G(S_{\text{noisy}}) \Vert{}_1$ forces strict amplitude and phase alignment with the original wavelet.
+Where $L_{L1} = \vert{}\vert{} S_{clean} - G(S_{noisy}) \vert{}\vert{}_1$ forces strict amplitude and phase alignment with the original wavelet.
 
 ---
 
