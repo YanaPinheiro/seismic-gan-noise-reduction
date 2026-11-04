@@ -97,6 +97,7 @@ Synthetic seismic trace generated with $f_M = 25\text{ Hz}$ overlaid with synthe
 ├── generate_synthetic_data.py # Script for synthetic Ricker wavelet generation
 ├── train.py                   # GAN training pipeline with combined losses
 └── README.md                  # Detailed project documentation
+```
 
 ---
 
