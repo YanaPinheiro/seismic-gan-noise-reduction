@@ -117,6 +117,13 @@ Synthetic seismic trace generated with $f_M = 25\text{ Hz}$ overlaid with synthe
 
 ---
 
+## 🤝 Acknowledgments & Declaration
+
+* **Computational Infrastructure:** Model training, execution, and experimental validation were carried out using **Google Colab** (GPU computing environment).
+* **Version Control & Repository:** Project codebase, history, and deployment are managed via **Git** and hosted on **GitHub**.
+* **AI Assistance:** **Gemini (Google AI, version 2.5)** was used as an auxiliary tool to organize the primary idea provided by the author, structure the documentation, and translate text from Portuguese to English.
+
+
 ## 👩‍💻 Author
 **Yana Pinheiro**
 * M.Sc. Candidate in Geophysics at CPGF-UFPA (CNPq scholar).
