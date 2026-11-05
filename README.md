@@ -1,3 +1,5 @@
+> This is my very first project in this field. Suggestions, corrections, and feedback are always welcome!
+
 # Seismic GAN Noise Reduction 🧊🤖
 
 A high-performance computational framework for seismic signal noise attenuation using Generative Adversarial Networks (GANs) built in PyTorch. Developed as part of computational geophysics research.
