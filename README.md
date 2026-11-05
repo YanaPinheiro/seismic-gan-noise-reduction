@@ -1,4 +1,4 @@
-> This is my very first project in this field. Suggestions, corrections, and feedback are always welcome!
+> This is my very first project in this field and this is an introductory project in this field, requiring further refinement and validation with real data sets. . Suggestions, corrections, and feedback are always welcome!
 
 # Seismic GAN Noise Reduction 🧊🤖
 
